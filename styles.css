@@ -1,0 +1,1086 @@
+/* ConnectHer Brand Colors */
+:root {
+    --purple: #410088;
+    --light-purple: #905CFF;
+    --lila: #AF88FF;
+    --blue: #92D2D8;
+    --beige: #F7F5ED;
+    --orange: #FF8600;
+    --white: #FFFFFF;
+    --black: #000000;
+    --text-dark: #1a1a1a;
+    --text-light: #666666;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--white);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* Ensure proper width constraints */
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 0.75rem;
+}
+
+p {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.7;
+}
+
+/* Navigation */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.98);
+    padding: 1.25rem 0;
+    border-bottom: 1px solid rgba(65, 0, 136, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: background-color, box-shadow;
+}
+
+.navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 1px 3px rgba(65, 0, 136, 0.08), 0 1px 2px rgba(65, 0, 136, 0.06);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.logo-img {
+    height: 42px;
+    width: auto;
+    max-width: 300px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+/* SVG logo specific styling */
+.logo-img[src$=".svg"] {
+    height: 42px;
+    width: auto;
+}
+
+/* Ensure all images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.logo-img:hover {
+    transform: scale(1.02);
+}
+
+/* Text fallback if logo image is missing */
+.logo {
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+}
+
+.waitlist-btn-nav {
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--purple);
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.875rem 1.75rem;
+    border-radius: 6px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+        0 0.706592px 0.706592px -0.625px rgba(65, 0, 136, 0.15),
+        0 1.80656px 1.80656px -1.25px rgba(65, 0, 136, 0.12),
+        0 3.62176px 3.62176px -1.875px rgba(65, 0, 136, 0.1),
+        0 6.8656px 6.8656px -2.5px rgba(65, 0, 136, 0.08),
+        0 13.6468px 13.6468px -3.125px rgba(65, 0, 136, 0.06),
+        0 30px 30px -3.75px rgba(65, 0, 136, 0.04);
+    position: relative;
+    overflow: hidden;
+}
+
+.waitlist-btn-nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.waitlist-btn-nav:hover::before {
+    left: 100%;
+}
+
+.waitlist-btn-nav:hover {
+    background-color: var(--light-purple);
+    transform: translateY(-1px);
+    box-shadow: 
+        0 1px 2px -1px rgba(65, 0, 136, 0.2),
+        0 2px 4px -2px rgba(65, 0, 136, 0.15),
+        0 4px 8px -3px rgba(65, 0, 136, 0.12),
+        0 8px 16px -4px rgba(65, 0, 136, 0.1);
+}
+
+.waitlist-btn-nav:active {
+    transform: translateY(0);
+    box-shadow: 
+        0 0.5px 1px -0.5px rgba(65, 0, 136, 0.2),
+        0 1px 2px -1px rgba(65, 0, 136, 0.15);
+}
+
+/* Hero Section */
+.hero {
+    padding: 8rem 0 6rem;
+    text-align: center;
+    background: linear-gradient(to bottom, var(--white) 0%, var(--beige) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+@media (min-width: 769px) {
+    .hero {
+        min-height: 60vh;
+        display: flex;
+        align-items: center;
+    }
+    
+    .hero .container {
+        width: 100%;
+    }
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(144, 92, 255, 0.03) 0%, transparent 70%);
+    animation: pulse 20s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.5; }
+    50% { transform: scale(1.1) rotate(180deg); opacity: 0.8; }
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-logo {
+    margin-bottom: 2rem;
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out 0.1s both;
+}
+
+.hero-logo-img {
+    max-width: 100%;
+    height: auto;
+    max-height: 120px;
+    width: auto;
+    object-fit: contain;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-title {
+    color: var(--purple);
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    color: var(--text-light);
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+/* Buttons */
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border-radius: 6px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 1.125rem;
+    text-decoration: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.cta-button.primary {
+    background-color: var(--purple);
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 
+        0 0.706592px 0.706592px -0.625px rgba(65, 0, 136, 0.2),
+        0 1.80656px 1.80656px -1.25px rgba(65, 0, 136, 0.15),
+        0 3.62176px 3.62176px -1.875px rgba(65, 0, 136, 0.12),
+        0 6.8656px 6.8656px -2.5px rgba(65, 0, 136, 0.1),
+        0 13.6468px 13.6468px -3.125px rgba(65, 0, 136, 0.08),
+        0 30px 30px -3.75px rgba(65, 0, 136, 0.06);
+}
+
+.cta-button.primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.cta-button.primary:hover::before {
+    left: 100%;
+}
+
+.cta-button.primary:hover {
+    background-color: var(--light-purple);
+    transform: translateY(-2px);
+    box-shadow: 
+        0 1px 2px -1px rgba(65, 0, 136, 0.25),
+        0 2px 4px -2px rgba(65, 0, 136, 0.2),
+        0 4px 8px -3px rgba(65, 0, 136, 0.15),
+        0 8px 16px -4px rgba(65, 0, 136, 0.12),
+        0 16px 32px -5px rgba(65, 0, 136, 0.1);
+}
+
+.cta-button.primary:active {
+    transform: translateY(0);
+    box-shadow: 
+        0 0.5px 1px -0.5px rgba(65, 0, 136, 0.25),
+        0 1px 2px -1px rgba(65, 0, 136, 0.2);
+}
+
+.cta-button.large {
+    padding: 1.25rem 3rem;
+    font-size: 1.25rem;
+}
+
+/* Value Proposition Section */
+.value-prop {
+    padding: 5rem 0;
+    text-align: center;
+    background-color: var(--white);
+    position: relative;
+}
+
+.value-prop .section-title,
+.value-prop .section-description {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+}
+
+.value-prop .section-title.visible,
+.value-prop .section-description.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-title {
+    color: var(--purple);
+    margin-bottom: 1.5rem;
+}
+
+.section-description {
+    font-size: clamp(1.125rem, 2vw, 1.25rem);
+    color: var(--text-light);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Benefits Section */
+.benefits {
+    padding: 5rem 0;
+    background-color: var(--beige);
+}
+
+.benefits .section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.benefit-card {
+    background-color: var(--white);
+    padding: 2.5rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid rgba(65, 0, 136, 0.08);
+    box-shadow: 
+        0 1px 2px rgba(65, 0, 136, 0.04),
+        0 2px 4px rgba(65, 0, 136, 0.03);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(30px);
+    will-change: transform, opacity, box-shadow;
+}
+
+.benefit-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.benefit-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+        0 4px 8px rgba(65, 0, 136, 0.1),
+        0 8px 16px rgba(65, 0, 136, 0.08),
+        0 16px 32px rgba(65, 0, 136, 0.06);
+    border-color: rgba(144, 92, 255, 0.2);
+}
+
+.benefit-title {
+    color: var(--purple);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.benefit-card:hover .benefit-title {
+    color: var(--light-purple);
+}
+
+.benefit-description {
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+/* Waitlist Section */
+.waitlist {
+    padding: 6rem 0;
+    background-color: var(--beige);
+    color: var(--text-dark);
+    text-align: center;
+    position: relative;
+}
+
+.waitlist .section-title {
+    color: var(--purple);
+    margin-bottom: 1.5rem;
+}
+
+.waitlist-description {
+    font-size: clamp(1.125rem, 2vw, 1.25rem);
+    margin-bottom: 2rem;
+    color: var(--text-light);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.waitlist-benefits {
+    list-style: none;
+    padding: 0;
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+    margin-bottom: 2.5rem;
+    line-height: 2.2;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.waitlist-benefits li {
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-dark);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.waitlist-benefits li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--purple);
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.waitlist-benefits li:hover {
+    transform: translateX(5px);
+    color: var(--purple);
+}
+
+.waitlist-benefits strong {
+    font-weight: 700;
+}
+
+.waitlist-note {
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.waitlist .cta-button.primary {
+    background-color: var(--purple);
+    color: var(--white);
+    border-color: rgba(65, 0, 136, 0.2);
+    box-shadow: 
+        0 0.706592px 0.706592px -0.625px rgba(65, 0, 136, 0.2),
+        0 1.80656px 1.80656px -1.25px rgba(65, 0, 136, 0.15),
+        0 3.62176px 3.62176px -1.875px rgba(65, 0, 136, 0.12),
+        0 6.8656px 6.8656px -2.5px rgba(65, 0, 136, 0.1),
+        0 13.6468px 13.6468px -3.125px rgba(65, 0, 136, 0.08),
+        0 30px 30px -3.75px rgba(65, 0, 136, 0.06);
+}
+
+.waitlist .cta-button.primary::before {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+}
+
+.waitlist .cta-button.primary:hover {
+    background-color: var(--light-purple);
+    transform: translateY(-2px);
+    box-shadow: 
+        0 1px 2px -1px rgba(65, 0, 136, 0.25),
+        0 2px 4px -2px rgba(65, 0, 136, 0.2),
+        0 4px 8px -3px rgba(65, 0, 136, 0.15),
+        0 8px 16px -4px rgba(65, 0, 136, 0.12);
+}
+
+/* Founder Quote Section */
+.founder-quote {
+    padding: 5rem 0 1.5rem 0;
+    background-color: var(--white);
+    text-align: center;
+    position: relative;
+}
+
+.quote-content {
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.quote-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.quote-text {
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    font-style: italic;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 2rem;
+}
+
+/* Quote responsive styles are now in main responsive section */
+
+.quote-author {
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+    color: var(--purple);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.quote-content:hover .quote-author {
+    color: var(--light-purple);
+}
+
+/* Footer */
+.footer {
+    padding: 2rem 0;
+    background-image: url('assets/CH_footer_logo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    position: relative;
+    /* min-height: 400px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer .container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+.footer-text {
+    font-size: 0.9rem;
+    color: var(--purple);
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.footer-privacy {
+    font-size: 0.85rem;
+    color: var(--purple);
+    text-align: center;
+    margin: 0;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive Design */
+
+/* Tablet and below (1024px) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 24px;
+    }
+    
+    .hero {
+        padding: 7rem 0 5rem;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+}
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+    
+    /* Navigation */
+    .nav-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .waitlist-btn-nav {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.875rem;
+        white-space: nowrap;
+    }
+    
+    .logo-img {
+        height: 36px;
+        max-width: 250px;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 5rem 0 4rem;
+    }
+    
+    .hero-content {
+        max-width: 100%;
+    }
+    
+    .hero-logo {
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-logo-img {
+        max-height: 110px;
+    }
+    
+    .hero-title {
+        font-size: clamp(2rem, 6vw, 3rem);
+        margin-bottom: 1.25rem;
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(1rem, 3vw, 1.25rem);
+        margin-bottom: 2.5rem;
+    }
+
+    /* Sections */
+    .value-prop,
+    .benefits {
+        padding: 3.5rem 0;
+    }
+    
+    .founder-quote {
+        padding: 3.5rem 0 1rem 0;
+    }
+    
+    .section-title {
+        font-size: clamp(1.75rem, 5vw, 2.5rem);
+        margin-bottom: 1.25rem;
+    }
+    
+    .section-description {
+        font-size: clamp(1rem, 2.5vw, 1.125rem);
+    }
+
+    /* Waitlist */
+    .waitlist {
+        padding: 4rem 0;
+    }
+    
+    .waitlist-description {
+        font-size: clamp(1rem, 2.5vw, 1.125rem);
+        margin-bottom: 1.5rem;
+    }
+    
+    .waitlist-benefits {
+        font-size: clamp(0.9375rem, 2vw, 1rem);
+        line-height: 2;
+        margin-bottom: 2rem;
+    }
+    
+    .waitlist-benefits li {
+        padding-left: 1.25rem;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Benefits Grid */
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .benefit-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .benefit-title {
+        font-size: clamp(1.25rem, 3vw, 1.5rem);
+    }
+    
+    .benefit-description {
+        font-size: clamp(0.9375rem, 2vw, 1rem);
+    }
+
+    /* Buttons */
+    .cta-button {
+        padding: 0.875rem 2rem;
+        font-size: 1rem;
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .cta-button.large {
+        padding: 1.125rem 2.5rem;
+        font-size: 1.125rem;
+    }
+    
+    .waitlist .cta-button.large {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Quote Section */
+    .quote-content {
+        padding: 0 1rem;
+    }
+    
+    .quote-text {
+        font-size: clamp(1.125rem, 3vw, 1.5rem);
+        padding-left: 1.5rem;
+    }
+    
+    .quote-author {
+        font-size: clamp(0.9375rem, 2vw, 1rem);
+    }
+
+    /* Footer */
+    .footer {
+        padding: 2rem 0;
+        min-height: 300px;
+        background-size: cover;
+    }
+    
+    .footer .container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .footer-content {
+        width: 100%;
+        text-align: center;
+        gap: 0.5rem;
+    }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    /* Navigation */
+    .navbar {
+        padding: 1rem 0;
+    }
+    
+    .nav-content {
+        justify-content: center;
+        gap: 0;
+    }
+    
+    .logo {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .logo-img {
+        height: 32px;
+        max-width: 200px;
+    }
+
+    /* Hide waitlist button on mobile */
+    .waitlist-btn-nav {
+        display: none;
+    }
+    
+    .hero-logo {
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-logo-img {
+        max-height: 90px;
+        width: auto;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 4rem 0 3rem;
+    }
+    
+    .hero-title {
+        font-size: clamp(1.75rem, 8vw, 2.5rem);
+        line-height: 1.1;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(0.9375rem, 4vw, 1.125rem);
+        margin-bottom: 2rem;
+        line-height: 1.6;
+    }
+
+    /* Sections */
+    .value-prop,
+    .benefits {
+        padding: 2.5rem 0;
+    }
+    
+    .founder-quote {
+        padding: 2.5rem 0 1rem 0;
+    }
+    
+    .section-title {
+        font-size: clamp(1.5rem, 7vw, 2rem);
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+    
+    .section-description {
+        font-size: clamp(0.9375rem, 3vw, 1rem);
+        line-height: 1.6;
+    }
+
+    /* Waitlist */
+    .waitlist {
+        padding: 3rem 0;
+    }
+    
+    .waitlist .section-title {
+        font-size: clamp(1.5rem, 7vw, 2rem);
+        margin-bottom: 1rem;
+    }
+    
+    .waitlist-description {
+        font-size: clamp(0.9375rem, 3vw, 1rem);
+        margin-bottom: 1.5rem;
+    }
+    
+    .waitlist-benefits {
+        font-size: clamp(0.875rem, 3vw, 0.9375rem);
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        text-align: left;
+    }
+    
+    .waitlist-benefits li {
+        padding-left: 1rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .waitlist-note {
+        font-size: 0.875rem;
+        margin-top: 1rem;
+    }
+
+    /* Benefits */
+    .benefits-grid {
+        gap: 1.25rem;
+        margin-top: 1.5rem;
+    }
+
+    .benefit-card {
+        padding: 1.75rem 1.25rem;
+    }
+    
+    .benefit-title {
+        font-size: clamp(1.125rem, 4vw, 1.25rem);
+        margin-bottom: 0.75rem;
+    }
+    
+    .benefit-description {
+        font-size: clamp(0.875rem, 3vw, 0.9375rem);
+        line-height: 1.6;
+    }
+
+    /* Buttons */
+    .cta-button {
+        padding: 0.875rem 1.75rem;
+        font-size: 0.9375rem;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .cta-button.large {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+    
+    /* Reduce button shadow complexity on mobile for performance */
+    .cta-button.primary,
+    .waitlist-btn-nav {
+        box-shadow: 
+            0 2px 4px rgba(65, 0, 136, 0.15),
+            0 4px 8px rgba(65, 0, 136, 0.1);
+    }
+    
+    .cta-button.primary:hover,
+    .waitlist-btn-nav:hover {
+        box-shadow: 
+            0 4px 8px rgba(65, 0, 136, 0.2),
+            0 8px 16px rgba(65, 0, 136, 0.15);
+    }
+
+    /* Quote Section */
+    .quote-content {
+        padding: 0;
+    }
+    
+    .quote-text {
+        font-size: clamp(1rem, 4vw, 1.25rem);
+        padding-left: 1.25rem;
+        margin-bottom: 1rem;
+        line-height: 1.5;
+    }
+    
+    .quote-author {
+        font-size: clamp(0.875rem, 3vw, 0.9375rem);
+    }
+
+    /* Footer */
+    .footer {
+        padding: 1.5rem 0;
+        min-height: 250px;
+        background-size: cover;
+    }
+    
+    .footer .container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .footer-content {
+        width: 100%;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .footer-text {
+        font-size: 0.8125rem;
+        color: var(--purple);
+        text-align: center;
+        margin: 0;
+        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+    }
+    
+    .footer-privacy {
+        font-size: 0.75rem;
+        color: var(--purple);
+        text-align: center;
+        margin: 0;
+        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+    }
+}
+
+/* Small Mobile (360px and below) */
+@media (max-width: 360px) {
+    .container {
+        padding: 0 12px;
+    }
+    
+    .hero {
+        padding: 3rem 0 2rem;
+    }
+    
+    .hero-logo-img {
+        max-height: 80px;
+    }
+    
+    .cta-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.875rem;
+    }
+    
+    .benefit-card {
+        padding: 1.5rem 1rem;
+    }
+}
+
+/* Landscape Mobile Orientation */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        padding: 4rem 0 3rem;
+    }
+    
+    .value-prop,
+    .benefits,
+    .founder-quote {
+        padding: 2.5rem 0;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    /* Larger touch targets for mobile */
+    .waitlist-btn-nav,
+    .cta-button {
+        min-height: 44px; /* Apple's recommended minimum touch target */
+    }
+    
+    /* Remove hover effects on touch devices */
+    .benefit-card:hover {
+        transform: none;
+    }
+    
+    .logo-img:hover {
+        transform: none;
+    }
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
